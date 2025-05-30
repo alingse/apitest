@@ -675,7 +675,7 @@ func (r *Response) HeaderNotPresent(name string) *Response {
 func (r *Response) Headers(headers map[string]string) *Response {
 	for name, value := range headers {
 		normalizedName := textproto.CanonicalMIMEHeaderKey(name)
-		r.headers[normalizedName] = append(r.headers[textproto.CanonicalMIMEHeaderKey(normalizedName)], value)
+		r.headers[normalizedName] = append(r.headers[normalizedName], value)
 	}
 	return r
 }
